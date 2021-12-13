@@ -1,0 +1,60 @@
+.animelist-container{   
+    background-color: #111111;
+    padding-bottom: 3rem;
+}
+.top-heading{
+    padding-top: 3rem;
+    margin-left: 8rem;
+    margin-right: 105.5rem;
+}
+.top-heading h1{
+    color: black;
+    background-color: #ffc11a;
+    border-left: 50px;
+
+}
+.list-filter{
+    border-style: solid;
+    padding-top: 2rem;
+    margin-left: 8rem;
+    padding-right: 10rem;
+    margin-right: 10rem;
+    color: #ffc11a;
+    display: flex;
+    justify-content: space-evenly;   
+}
+.list-filter h3{
+    padding-right: 13rem;
+}
+#title{
+    padding-right: 15rem;
+}
+.list-data{
+    display: flex;
+    color: #ffc11a;
+    margin-top: 2rem;
+    margin-left: 20rem;
+}
+.list-data p{
+    flex: 1;
+    text-align: left;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    max-width: 10rem;
+    white-space: nowrap;
+    padding-right: 13rem;
+    
+}
+#title1{
+    padding-right: 5rem;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    max-width: 21rem;
+    white-space: nowrap;
+}
+#episode{
+    padding-left: 5rem;
+}
+#rating{
+    padding-left: 4.5rem;
+}

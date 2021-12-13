@@ -1,0 +1,52 @@
+.footer-container{
+    background-color: #1f1f1f;
+    padding-top: 3rem;
+    align-items: center;
+}
+.top-footer{
+    display: flex;
+    margin-left: 8rem;
+    padding-bottom: 1.5rem;
+}
+.left-footer{
+    color: white;
+}
+.right-footer{
+    color: #ffc11a;
+    padding-left: 10rem;
+}
+.right-footer button{
+    align-items: center;
+    margin-left: 0.8rem;
+    padding: 5px;
+    border-radius: 6px;
+    border-style: none;
+    cursor: pointer;
+}
+.bottom-footer{
+    margin-left: 8rem;
+    padding-top: 3rem;
+    padding-bottom: 4.4rem;
+}
+.bottom-footer ul{
+    display: flex;
+    list-style: none;
+}
+.bottom-footer a{
+    color: #ffc119;
+    padding-right: 3.6rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+#discord{
+    background-color: #6f85d5;
+    color: white;
+}
+#telegram{
+    background-color: #0088cc;
+    color: white;
+}
+#reddit{
+    background-color: #ff3c1f;
+    color: white;
+}
