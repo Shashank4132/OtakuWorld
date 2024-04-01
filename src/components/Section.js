@@ -14,12 +14,12 @@ class Section extends Component{
     }   
 
     async componentDidMount() { 
-        await fetch("https://api.jikan.moe/v3/top/anime/1/tv")
+        await fetch("https://api.jikan.moe/v4/top/anime")
           .then(response => response.json())
-          .then(data => this.setState({ anime: data }))
-        await fetch("https://api.jikan.moe/v3/top/manga/1")
+          .then(data => this.setState({ anime: data.data }))
+        await fetch("https://api.jikan.moe/v4/top/manga")
           .then(response => response.json())
-          .then(data => this.setState({ manga: data }))
+          .then(data => this.setState({ manga: data.data }))
     }
     render(){
         return (
@@ -35,32 +35,35 @@ class Section extends Component{
                         <button className="all"><AiFillPlayCircle size="24px" /></button>
                     </div>
                     <div className="top-anime-cards">
-                    {(this.state.anime)?this.state.anime.top.slice(0,16).map(anime => (
+                    {(this.state.anime)?this.state.anime.map(anime => (
                         <Link to={{pathname:'/watch' , state:{data:anime}}}>
                             <div className="card">
                                 <React.Fragment>
-                                    <img src= {anime.image_url} />
+                                    <img src= {anime.images.jpg.image_url} />
                                     <h2 key={anime.rank}>{anime.title}</h2>
-                                    <h3>{anime.start_date.slice(4)} . {anime.type}</h3>
+                                    {/* <h3>{anime.start_date.slice(0,4)} . {anime.type}</h3> */}
                                 </React.Fragment>
                             </div>
                         </Link>
                         )):null}
+                        {/* {this.state.anime} */}
+                        {console.log(this.state.anime)}
                     </div>
                     <div className="section-filter-2">
                         <h2>TOP MANGA 2021</h2>
                         <button className="all"><AiFillPlayCircle size="25px" /></button>   
                     </div>
                     <div className="popular-anime-cards">
-                        {(this.state.manga)?this.state.manga.top.slice(16,32).map(manga => (
+                        {/* {(this.state.manga)?this.state.manga.top.map(manga => (
                         <div className="card">
                                 <React.Fragment>
                                     <img src= {manga.image_url} />
                                     <h2 key={manga.rank}>{manga.title}</h2>
-                                    <h3>{manga.start_date.slice(4)} . {manga.type}</h3>
+                                    <h3>{manga.start_date.slice(0,4)} . {manga.type}</h3>
                                 </React.Fragment>
                         </div>
-                        )):null}
+                        )):null} */}
+                        
                     </div>
                 </div>
             </div>

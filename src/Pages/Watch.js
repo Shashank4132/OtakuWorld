@@ -10,7 +10,7 @@ function Watch(props) {
                 <div className="watch-top">
                     <div className="watch-top-left">
                         {console.log("watch",props.location)}
-                        <img src= {props.location.state.data.image_url} />
+                        <img src= {props.location.state.data.images.jpg.image_url} />
                     </div>
                     <div className="watch-top-right">
                         <h2>  {props.location.state.data.title}</h2>

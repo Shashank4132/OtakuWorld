@@ -13,12 +13,12 @@ class Popular extends Component{
 
 
     async componentDidMount() {
-        await fetch("https://api.jikan.moe/v3/top/anime/1/tv")
+        await fetch("https://api.jikan.moe/v4/top/anime")
           .then(response => response.json())
-          .then(data => this.setState({ anime: data }))
-        await fetch("https://api.jikan.moe/v3/top/manga/1")
+          .then(data => this.setState({ anime: data.data }))
+        await fetch("https://api.jikan.moe/v4/top/manga")
           .then(response => response.json())
-          .then(data => this.setState({ manga: data }))
+          .then(data => this.setState({ manga: data.data }))
     }
           
     render(){
@@ -35,10 +35,10 @@ class Popular extends Component{
                         <button className="all"><AiFillPlayCircle size="24px" /></button>
                     </div>
                     <div className="top-anime-cards">
-                        {(this.state.anime)?this.state.anime.top.slice(16,32).map(anime => (
+                        {(this.state.anime)?this.state.anime.slice(16,32).map(anime => (
                         <div className="card">
                                 <React.Fragment>
-                                    <img src= {anime.image_url} />
+                                    <img src= {anime.images.jpg.image_url} />
                                     <h2 key={anime.rank}>{anime.title}</h2>
                                     <h3>{anime.start_date.slice(4)} . {anime.type}</h3>
                                 </React.Fragment>

@@ -10,9 +10,9 @@ class AnimeList extends Component{
     }
 
     async componentDidMount(){
-        const response = await fetch('https://api.jikan.moe/v3/top/anime/1/tv')
+        const response = await fetch('https://api.jikan.moe/v4/top/anime')
         const json= await response.json()
-        this.setState({anime: json});
+        this.setState({anime: json.data});
     }
 
     render(){
@@ -30,7 +30,7 @@ class AnimeList extends Component{
                         <h3>RATING</h3> 
                     </div>
                 <div className="list" >
-                    {(this.state.anime)?this.state.anime.top.slice(0,20).map(anime => (
+                    {(this.state.anime)?this.state.anime.slice(0,20).map(anime => (
                         <div className="list-data">
                             <React.Fragment>
                                 <p>{anime.rank}</p>

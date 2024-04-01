@@ -10,7 +10,7 @@ class Section extends Component{
     }   
 
     async componentDidMount(){
-        const response = await fetch(`https://api.jikan.moe/v3/top/manga/1`)
+        const response = await fetch(`https://api.jikan.moe/v4/top/manga`)
         const json = await response.json()
         this.setState({anime: json});
     }
