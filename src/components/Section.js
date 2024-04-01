@@ -41,6 +41,8 @@ class Section extends Component{
                                 <React.Fragment>
                                     <img src= {anime.images.jpg.image_url} />
                                     <h2 key={anime.rank}>{anime.title}</h2>
+                                    <br />
+                                    <br />
                                     {/* <h3>{anime.start_date.slice(0,4)} . {anime.type}</h3> */}
                                 </React.Fragment>
                             </div>
@@ -54,15 +56,17 @@ class Section extends Component{
                         <button className="all"><AiFillPlayCircle size="25px" /></button>   
                     </div>
                     <div className="popular-anime-cards">
-                        {/* {(this.state.manga)?this.state.manga.top.map(manga => (
+                        {(this.state.manga)?this.state.manga.map(manga => (
                         <div className="card">
                                 <React.Fragment>
-                                    <img src= {manga.image_url} />
-                                    <h2 key={manga.rank}>{manga.title}</h2>
-                                    <h3>{manga.start_date.slice(0,4)} . {manga.type}</h3>
+                                    <img src= {manga.images.jpg.image_url} />
+                                    <h2 >{manga.title}</h2>
+                                    <br />
+                                    <br />
+                                    {/* <h3>{manga.start_date.slice(0,4)} . {manga.type}</h3> */}
                                 </React.Fragment>
                         </div>
-                        )):null} */}
+                        )):null} 
                         
                     </div>
                 </div>
